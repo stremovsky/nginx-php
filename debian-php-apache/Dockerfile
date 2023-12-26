@@ -4,7 +4,7 @@ RUN apt update && apt -y upgrade && apt install -y php7.4 libapache2-mod-rpaf ap
 COPY debian-php-apache/nginx-default.conf /etc/nginx/sites-available/default
 ADD src /usr/share/nginx/html/
 COPY debian-php-apache/apache-ports.conf /etc/apache2/ports.conf
-COPY apache-default.conf /etc/apache2/sites-enabled/000-default.conf 
+COPY debian-php-apache/apache-default.conf /etc/apache2/sites-enabled/000-default.conf 
 WORKDIR /app
 COPY debian-php-apache/exec.sh .
 EXPOSE 80
