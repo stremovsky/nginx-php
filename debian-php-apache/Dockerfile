@@ -2,7 +2,7 @@ FROM debian:bullseye-slim
 RUN apt update && apt -y upgrade && apt install -y php7.4 libapache2-mod-rpaf apache2 nginx \
     ca-certificates apt-transport-https lsb-release ; mkdir -p /run/php
 COPY debian-php-apache/nginx-default.conf /etc/nginx/sites-available/default
-ADD src /usr/share/nginx/html/
+ADD src /var/www/html/
 COPY debian-php-apache/apache-ports.conf /etc/apache2/ports.conf
 WORKDIR /app
 COPY debian-php-apache/exec.sh .
