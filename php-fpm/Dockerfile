@@ -5,4 +5,5 @@ ADD src /usr/share/nginx/html/
 WORKDIR /app
 COPY php-fpm/exec.sh .
 EXPOSE 80
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 wget -O /dev/null localhost/hello.php
 CMD ["./exec.sh"]
