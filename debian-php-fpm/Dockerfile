@@ -1,5 +1,5 @@
 FROM debian:bullseye-slim
-RUN apt update && apt -y upgrade && apt install -y php7.4 php7.4-fpm nginx
+RUN apt update && apt -y upgrade && apt install -y php7.4 php7.4-fpm nginx ; mkdir -p /run/php
 COPY debian-php-fpm/nginx-default.conf /etc/nginx/sites-available/default
 ADD src /usr/share/nginx/html/
 WORKDIR /app
