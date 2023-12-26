@@ -1,4 +1,4 @@
 #!/bin/sh
 
-#uwsgi --socket 127.0.0.1:18080 --wsgi-file hello.py --master &
+php-fpm7
 nginx -g 'daemon off;'
